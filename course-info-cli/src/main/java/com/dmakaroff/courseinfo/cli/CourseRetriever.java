@@ -20,8 +20,6 @@ public class CourseRetriever {
 
         try {
             retrieveCourses(args[0]);
-//            LOG.info("course: {}", course);
-
         } catch(Exception ex) {
             LOG.error("Unexpected Error");
             ex.printStackTrace();
