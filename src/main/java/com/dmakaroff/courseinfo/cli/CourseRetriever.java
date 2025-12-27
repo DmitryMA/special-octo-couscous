@@ -33,6 +33,6 @@ public class CourseRetriever {
         CourseRetrieveService courseRetrieveService = new CourseRetrieveService();
         List<PluralsightCourse> courses = courseRetrieveService.getCoursesFor(authorId);
 
-        LOG.info("Retrieved the follow courses {}", courses);
+        LOG.info("Retrieved the follow {} courses {}", courses.size(), courses);
     }
 }
