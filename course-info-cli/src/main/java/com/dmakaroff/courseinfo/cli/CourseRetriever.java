@@ -1,5 +1,8 @@
 package com.dmakaroff.courseinfo.cli;
 import com.dmakaroff.courseinfo.cli.service.CourseRetrieveService;
+import com.dmakaroff.courseinfo.cli.service.CourseStorageService;
+import com.dmakaroff.courseinfo.cli.service.PluralsightCourse;
+import com.dmakaroff.courseinfo.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,11 +33,20 @@ public class CourseRetriever {
     private static void retrieveCourses(String authorId) {
         LOG.info("Retrieve Course for '{}': ", authorId);
         CourseRetrieveService courseRetrieveService = new CourseRetrieveService();
+
+        CourseRepository courseRepository = CourseRepository.openCourseRepository("./courses.db");
+        CourseStorageService courseStorageService = new CourseStorageService(courseRepository);
+
+
+
         List<PluralsightCourse> courses = courseRetrieveService.getCoursesFor(authorId)
                         .stream()
                         .filter(not(PluralsightCourse::isRetired))
                         .toList();
 
         LOG.info("Retrieved the follow {} courses {}", courses.size(), courses);
+
+        courseStorageService.storePluralsightCourses(courses);
+        LOG.info("Courses Successfully stored");
     }
 }

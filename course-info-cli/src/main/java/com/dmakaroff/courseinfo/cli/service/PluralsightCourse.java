@@ -1,4 +1,4 @@
-package com.dmakaroff.courseinfo.cli;
+package com.dmakaroff.courseinfo.cli.service;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

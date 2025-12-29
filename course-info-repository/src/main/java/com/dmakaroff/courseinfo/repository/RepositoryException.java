@@ -1,4 +1,9 @@
 package com.dmakaroff.courseinfo.repository;
 
-public class RepositoryException {
+import java.sql.SQLException;
+
+public class RepositoryException extends RuntimeException {
+    public RepositoryException(String message, SQLException ex) {
+        super(message, ex);
+    }
 }

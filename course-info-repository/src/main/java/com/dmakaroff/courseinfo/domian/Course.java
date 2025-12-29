@@ -9,7 +9,7 @@ public record Course(String id, String name, long length, String url) {
 
     private static void filled(String s) {
         if (s == null || s.isBlank()) {
-            throw new IllegalAccessException("No value present!");
+            throw new IllegalArgumentException("No value present!");
         }
     }
 }
