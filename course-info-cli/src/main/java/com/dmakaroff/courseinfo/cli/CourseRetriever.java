@@ -27,7 +27,6 @@ public class CourseRetriever {
 
     }
 
-
     private static void retrieveCourses(String authorId) {
         LOG.info("Retrieve Course for '{}': ", authorId);
         CourseRetrieveService courseRetrieveService = new CourseRetrieveService();
