@@ -1,6 +1,5 @@
 package com.dmakaroff.courseinfo.cli.service;
 
-import com.dmakaroff.courseinfo.cli.PluralsightCourse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
